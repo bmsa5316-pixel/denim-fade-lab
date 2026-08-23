@@ -1,0 +1,14 @@
+{
+  "record_schema": {
+    "date": "YYYY-MM-DD",
+    "day": "integer; calculated from baseline_date",
+    "wears": "integer; cumulative approximate wears",
+    "wash_count": "integer; cumulative",
+    "dryer_count": "integer; cumulative",
+    "note": "string",
+    "photos": [
+      "assets/images/..."
+    ]
+  },
+  "next_step": "Connect a secure upload form to GitHub/Drive; do not place GitHub tokens in browser JavaScript."
+}

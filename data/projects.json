@@ -1,0 +1,46 @@
+{
+  "site": {
+    "name": "DENIM FADE LAB",
+    "tagline": "デニムを同じ条件で撮影し、経年変化を記録する。",
+    "version": "V1"
+  },
+  "projects": [
+    {
+      "id": "tcb1890-setup",
+      "brand": "TCB",
+      "model": "1890 No.2 SETUP",
+      "start_date": "2025-04",
+      "baseline_date": "2026-08-23",
+      "wear_frequency": "週3回程度",
+      "estimated_wears": "約200回",
+      "wash_count_jacket": 2,
+      "wash_count_jeans": 2,
+      "dryer_count": 1,
+      "wash_method": "デニム用洗剤につけ置き",
+      "current_observation": "購入後約1年間は変化が比較的緩やかだったが、その後、太い糸の色落ちが進み、全体的にタテ落ちが目立ってきたように感じる。",
+      "items": [
+        {
+          "id": "tcb1890-jacket",
+          "type": "Jacket",
+          "baseline_image": "assets/images/tcb1890_jacket_baseline.jpg"
+        },
+        {
+          "id": "tcb1890-jeans",
+          "type": "Jeans",
+          "baseline_image": "assets/images/tcb1890_jeans_baseline.jpg",
+          "hem_note": "裾2回折りの状態を基準として記録"
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-08-23",
+          "day": 0,
+          "wears_since_last": 0,
+          "wash_count": 2,
+          "dryer_count": 1,
+          "note": "BASELINE。約1年4か月の着用後の現在地。"
+        }
+      ]
+    }
+  ]
+}

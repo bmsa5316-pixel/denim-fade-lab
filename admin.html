@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DENIM FADE LAB / 記録入力</title>
+<style>
+body{margin:0;background:#f5f3ef;color:#222;font-family:-apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif}
+main{max-width:720px;margin:auto;padding:24px 16px 60px}
+h1{font-size:1.7rem}.card{background:#fff;border:1px solid #ddd8cf;padding:20px;margin:16px 0}
+label{display:block;font-size:.85rem;margin:14px 0 6px;color:#555}
+input,textarea,select{width:100%;box-sizing:border-box;padding:12px;border:1px solid #ccc;border-radius:8px;font:inherit}
+textarea{min-height:100px}
+button{width:100%;padding:14px;border:0;border-radius:8px;background:#222;color:#fff;font-weight:700;margin-top:18px}
+.preview img{max-width:100%;margin-top:10px;border:1px solid #ddd}
+small{color:#777}
+</style>
+</head>
+<body>
+<main>
+<h1>DENIM FADE LAB / 記録入力</h1>
+<p>月1回の定点観測用。写真と数値を入力すると、次回記録用JSONを作成します。</p>
+
+<div class="card">
+<label>対象</label>
+<select id="item">
+<option>TCB 1890 Jacket</option>
+<option>TCB 1890 Jeans</option>
+</select>
+
+<label>撮影日</label>
+<input id="date" type="date">
+
+<label>今回までの着用回数（概算）</label>
+<input id="wears" type="number" min="0" placeholder="例：215">
+
+<label>累計洗濯回数</label>
+<input id="wash" type="number" min="0" value="2">
+
+<label>累計乾燥機回数</label>
+<input id="dryer" type="number" min="0" value="1">
+
+<label>今回のコメント</label>
+<textarea id="note" placeholder="例：右ヒゲの明暗差が前回より少し強くなった"></textarea>
+
+<label>写真</label>
+<input id="photos" type="file" accept="image/*" multiple>
+<small>写真はこのブラウザ内でプレビューするだけです。V2ではGitHubへの自動保存を追加します。</small>
+
+<div class="preview" id="preview"></div>
+<button onclick="makeRecord()">記録JSONを作成</button>
+<pre id="out" style="white-space:pre-wrap"></pre>
+</div>
+</main>
+<script>
+document.getElementById('date').valueAsDate=new Date();
+document.getElementById('photos').addEventListener('change',e=>{
+ const p=document.getElementById('preview'); p.innerHTML='';
+ [...e.target.files].forEach(f=>{
+   const img=document.createElement('img'); img.src=URL.createObjectURL(f); p.appendChild(img);
+ });
+});
+function makeRecord(){
+ const date=document.getElementById('date').value;
+ const start=new Date('2026-08-23T00:00:00');
+ const d=new Date(date+'T00:00:00');
+ const day=Math.max(0,Math.round((d-start)/86400000));
+ const record={
+   item:document.getElementById('item').value,
+   date, day,
+   wears:Number(document.getElementById('wears').value||0),
+   wash_count:Number(document.getElementById('wash').value||0),
+   dryer_count:Number(document.getElementById('dryer').value||0),
+   note:document.getElementById('note').value,
+   status:"draft"
+ };
+ const text=JSON.stringify(record,null,2);
+ document.getElementById('out').textContent=text;
+ const blob=new Blob([text],{type:'application/json'});
+ const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+ a.download=`record_${date}_${day}.json`; a.textContent='JSONを保存';
+ document.getElementById('out').appendChild(document.createElement('br'));
+ document.getElementById('out').appendChild(a);
+}
+</script>
+</body>
+</html>
