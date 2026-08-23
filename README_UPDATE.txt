@@ -1,1 +1,1 @@
-このZIPは既存DENIM FADE LABへのV4更新用です。index.html と data/projects.json を置換し、assets/images の2枚を同じパスへアップロードしてください。既存のstyle.css、Actions、既存の表面写真はそのまま残します。
+SEO update: title, meta description, canonical, Open Graph, robots.txt, sitemap.xml, and richer TCB 1890 first-party description added.

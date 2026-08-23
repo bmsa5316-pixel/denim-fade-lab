@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bmsa5316-pixel.github.io/denim-fade-lab/sitemap.xml
