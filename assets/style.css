@@ -55,9 +55,28 @@ body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-sys
 .comparison-note { margin:50px 0; padding:30px; border:1px solid var(--line); background:#faf9f6; }
 .comparison-note h2 { margin:4px 0 12px; }
 footer { padding:40px 0; color:var(--muted); font-size:.8rem; }
+.zoomable-image { cursor:zoom-in; transition:transform .18s ease, opacity .18s ease; }
+.zoomable-image:hover { opacity:.9; }
+.zoomable-image:focus-visible { outline:3px solid #222; outline-offset:3px; }
+body.lightbox-open { overflow:hidden; }
+.lightbox { position:fixed; inset:0; z-index:9999; display:none; align-items:center; justify-content:center; padding:28px; background:rgba(0,0,0,.88); }
+.lightbox.is-open { display:flex; }
+.lightbox-content { margin:0; max-width:min(94vw,1400px); max-height:92vh; display:flex; flex-direction:column; align-items:center; }
+.lightbox-image { max-width:94vw; max-height:84vh; width:auto; height:auto; object-fit:contain; display:block; box-shadow:0 12px 40px rgba(0,0,0,.45); }
+.lightbox-caption { margin-top:10px; max-width:90vw; color:#fff; font-size:.8rem; text-align:center; }
+.lightbox-close,.lightbox-prev,.lightbox-next { position:absolute; border:0; background:rgba(255,255,255,.12); color:#fff; width:46px; height:46px; border-radius:50%; cursor:pointer; font-size:32px; line-height:1; display:grid; place-items:center; }
+.lightbox-close { top:18px; right:18px; font-size:30px; }
+.lightbox-prev { left:18px; top:50%; transform:translateY(-50%); }
+.lightbox-next { right:18px; top:50%; transform:translateY(-50%); }
+.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover { background:rgba(255,255,255,.24); }
 @media (max-width:760px) {
   .hero { padding:52px 0 44px; }
   .project,.archive-card { padding:18px; }
   .project-head,.grid,.archive-grid,.archive-grid-3 { grid-template-columns:1fr; }
   .record dl { grid-template-columns:120px 1fr; }
+  .lightbox { padding:12px; }
+  .lightbox-image { max-width:96vw; max-height:78vh; }
+  .lightbox-prev { left:8px; }
+  .lightbox-next { right:8px; }
+  .lightbox-close { top:8px; right:8px; }
 }
