@@ -22,12 +22,14 @@
         {
           "id": "tcb1890-jacket",
           "type": "Jacket",
-          "baseline_image": "assets/images/tcb1890_jacket_baseline.jpg"
+          "baseline_image": "assets/images/tcb1890_jacket_baseline.jpg",
+          "back_image": "assets/images/tcb1890_jacket_baseline_back.jpg"
         },
         {
           "id": "tcb1890-jeans",
           "type": "Jeans",
           "baseline_image": "assets/images/tcb1890_jeans_baseline.jpg",
+          "back_image": "assets/images/tcb1890_jeans_baseline_back.jpg",
           "hem_note": "裾2回折りの状態を基準として記録"
         }
       ],
