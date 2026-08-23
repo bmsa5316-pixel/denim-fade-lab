@@ -1,0 +1,19 @@
+{
+  "generated_on": "2026-08-23",
+  "projects": [
+    {
+      "id": "tcb1890-setup",
+      "brand": "TCB",
+      "model": "1890 No.2 SETUP",
+      "baseline_date": "2026-08-23",
+      "latest": {
+        "date": "2026-08-23",
+        "day": 0,
+        "wears_since_last": 0,
+        "wash_count": 2,
+        "dryer_count": 1,
+        "note": "BASELINE。約1年4か月の着用後の現在地。"
+      }
+    }
+  ]
+}
