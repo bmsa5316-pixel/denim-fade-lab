@@ -23,14 +23,16 @@
           "id": "tcb1890-jacket",
           "type": "Jacket",
           "baseline_image": "assets/images/tcb1890_jacket_baseline.jpg",
-          "back_image": "assets/images/tcb1890_jacket_baseline_back.jpg"
+          "back_image": "assets/images/tcb1890_jacket_baseline_back.jpg",
+          "size": "46"
         },
         {
           "id": "tcb1890-jeans",
           "type": "Jeans",
           "baseline_image": "assets/images/tcb1890_jeans_baseline.jpg",
           "back_image": "assets/images/tcb1890_jeans_baseline_back.jpg",
-          "hem_note": "裾2回折りの状態を基準として記録"
+          "hem_note": "裾を1回ロールアップした状態を基準として記録",
+          "size": "36"
         }
       ],
       "records": [

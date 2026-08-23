@@ -32,7 +32,7 @@
 <main class="wrap">
   <section class="intro">
     <h2>現在の観測</h2>
-    <p>まずは TCB 1890 No.2 SETUP からスタート。今後、他のデニムも追加して比較できる構成にします。</p>
+    <p>まずは TCB 1890 No.2 SETUP からスタート。今後、Silverstone と EVISU を追加して比較できる構成にします。</p>
   </section>
   <section id="projects"></section>
 </main>
@@ -63,6 +63,7 @@ async function loadData() {
         <div class="item-body">
           <span class="label">${item.type}</span>
           <h3>${project.brand} ${project.model.replace(' No.2 SETUP', '')} ${item.type}</h3>
+          <p>サイズ：${item.size}</p>
           <p>BASELINE：${project.baseline_date}</p>
           ${item.hem_note ? `<p class="small">${item.hem_note}</p>` : ''}
         </div>
