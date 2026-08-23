@@ -1,0 +1,2 @@
+Added tcb1890.html dedicated SEO page, linked it from index.html, and added it to sitemap.xml.
+Existing GA4 and SEO metadata are retained.
